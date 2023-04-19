@@ -14,7 +14,23 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tour-of-heroes/toh-backend/core": [
+        "libs/toh-backend/core/src/index.ts"
+      ],
+      "@tour-of-heroes/toh-backend/heroes": [
+        "libs/toh-backend/heroes/src/index.ts"
+      ],
+      "@tour-of-heroes/toh-frontend/core": [
+        "libs/toh-frontend/core/src/index.ts"
+      ],
+      "@tour-of-heroes/toh-frontend/hero-editor": [
+        "libs/toh-frontend/hero-editor/src/index.ts"
+      ],
+      "@tour-of-heroes/toh-frontend/hero-list": [
+        "libs/toh-frontend/hero-list/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
