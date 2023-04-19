@@ -3,6 +3,7 @@ import {ChangeDetectionStrategy, Component, inject, OnInit} from "@angular/core"
 import {HeroService} from "@tour-of-heroes/toh-frontend/core";
 import {Observable} from "rxjs";
 import {AsyncPipe, NgFor} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   standalone: true,
@@ -10,14 +11,17 @@ import {AsyncPipe, NgFor} from "@angular/common";
   template: `
     <div
       *ngFor="let hero of heroes$ | async"
-      class="p-2 bg-slate-900 text-white mb-2">
+      class="p-2 bg-slate-900 text-white mb-2"
+      routerLink="/hero-editor/{{hero.id}}"
+      >
       {{hero.name}}
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NgFor,
-    AsyncPipe
+    AsyncPipe,
+    RouterLink
   ]
 })
 export class HeroListComponent implements OnInit {

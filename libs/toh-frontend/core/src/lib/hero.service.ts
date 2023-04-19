@@ -13,4 +13,8 @@ export class HeroService {
   getHeroes(): Observable<never> {
     return this.http.get<never>(BE_URL);
   }
+
+  getHero(id: string): Observable<never> {
+    return this.http.get<never>(`${BE_URL}/${id}`);
+  }
 }

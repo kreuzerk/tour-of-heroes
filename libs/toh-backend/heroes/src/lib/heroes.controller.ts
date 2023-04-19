@@ -1,4 +1,4 @@
-import {Controller, Get} from '@nestjs/common';
+import {Controller, Get, Param} from '@nestjs/common';
 
 import {HeroesService} from "./heroes.service";
 import {Hero} from "./hero.model";
@@ -12,5 +12,11 @@ export class HeroesController {
   @Get()
   public async getHeroes(): Promise<Hero[]> {
     return await this.heroesService.getHeroes();
+  }
+
+  @Get(':id')
+  findOne(@Param() params: any): string {
+    console.log(params.id);
+    return `This action returns a #${params.id} hero`;
   }
 }

@@ -7,7 +7,7 @@ export const appRoutes: Route[] = [
       .then(c => c.HeroListComponent)
   },
   {
-    path: 'hero-editor',
+    path: 'hero-editor/:id',
     loadComponent: () => import('@tour-of-heroes/toh-frontend/hero-editor')
       .then(c => c.HeroEditorComponent)
   },
